@@ -4,7 +4,7 @@ var http = require('http');
 // initialise the express application
 var app = require('./src/app');
 
-const port = process.env.PORT || '80'
+const port = process.env.PORT || '8080'
 
 
 /* Create HTTP server. */
