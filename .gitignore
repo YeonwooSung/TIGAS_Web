@@ -6,5 +6,8 @@ dist/
 dist/*
 */dist
 
+# result
+assets/result
+
 # Mac OS
 .DS_Store
