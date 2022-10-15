@@ -28,6 +28,19 @@ router.post('/', async (req, res, next) => {
     }
 });
 
+router.get('/img/:uuid', async (req, res) => {
+    var {uuid} = req.params;
+    try {
+        const response = await axios.get(`http://34.64.108.168:5000/api/v1/generate/tti/${uuid}/img`);
+        var data = response.data;
+        return res.send(data);
+    } catch(err) {
+        console.log(err);
+        return res.status(400).json({
+            error: err,
+        });
+    }
+});
 
 router.get('/result', async (req,res) => {
     var {uuid} = req.query;
