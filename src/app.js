@@ -29,6 +29,7 @@ app.use(bodyParser.urlencoded({
 // file path setups
 app.use("/assets", express.static(path.join(__dirname, "../assets")));
 app.use("/dist", express.static(path.join(__dirname, "../dist")));
+app.use("/public", express.static(path.join(__dirname, "../public")));
 
 
 //---------------------------------------------------------------------
