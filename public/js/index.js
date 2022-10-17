@@ -8,6 +8,7 @@ var myInterval = undefined;
 function sendRequestForTTI() {
     try {
         var text = document.getElementById('tti-target-text').value;
+        text = text.split('\n').join(' ');
         if (text == '' || text == null) {
             alert('Please enter a text to generate an image.');
             return;

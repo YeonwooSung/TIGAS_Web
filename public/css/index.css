@@ -17,6 +17,12 @@
     justify-content: center;
 }
 
+.form textarea {
+    width: 50ch;
+    /* height: 100px; */
+    margin-bottom: 10px;
+}
+
 .form input {
     width: 30ch;
     height: 30px;
