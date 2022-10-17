@@ -18,9 +18,16 @@ function sendRequestForTTI() {
             var ttiForm = new TtiForm(uuid, text, expectedTime);
             tti_queue.push(ttiForm);
             ttiForm.addTimeout();
+            
+            var img_tag = document.getElementById('tti-image');
+            img_tag.src = '/assets/loading.gif';
+        }).catch((err) => {
+            console.log(err);
+            alert('Error occured while sending request for TTI');
         });
     } catch(err) {
         console.log(err);
+        alert('Error occured while sending request for TTI');
     }
 }
 
