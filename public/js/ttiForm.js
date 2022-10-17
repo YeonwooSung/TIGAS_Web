@@ -15,7 +15,7 @@ class TtiForm {
     }
 
     async addTimeout() {
-        setTimeout(this.timeout_interval)
+        this.setTimeout(this.timeout_interval)
     }
 
     async setTimeout(timeout) {
