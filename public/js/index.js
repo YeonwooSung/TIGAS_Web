@@ -12,7 +12,7 @@ function sendRequestForTTI() {
             alert('Please enter a text to generate an image.');
             return;
         }
-        api.requestTextToImage().then((data) => {
+        api.requestTextToImage(text).then((data) => {
             var {uuid, expectedTime} = data;
             console.log(`timeout activates after ${expectedTime} seconds`);
             var ttiForm = new TtiForm(uuid, text, expectedTime);
