@@ -15,17 +15,14 @@ async function requestTextToImage(prompt) {
 }
 
 async function requestImageToImage(prompt, imgFile) {
-    try {
-        const form = new FormData();
-        form.append('text', prompt);
-        form.append('image', imgFile);
-        const res = await axios.post('/i2i', form, {
-            headers: form.getHeaders(),
-        });
-        return res.data;
-    } catch(err) {
-        console.log(err);
-    }
+    const form = new FormData();
+    form.append('text', prompt);
+    form.append('image', imgFile);
+    const res = await axios.post('http://34.64.108.168:5000/api/v2/generate/i2i', form, {
+        headers: form.getHeaders ? form.getHeaders() : { 'Content-Type': 'multipart/form-data' },
+    });
+    return res.data;
 }
+
 
 module.exports = {requestTextToImage, requestImageToImage};

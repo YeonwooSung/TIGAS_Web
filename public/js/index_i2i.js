@@ -10,7 +10,7 @@ var myInterval = undefined;
 function sendRequestForI2I() {
     try {
         const prompt = document.getElementById('i2i-target-text').value;
-        const selectedFile = document.getElementById('i2i-user-image').files;
+        let selectedFile = document.getElementById('i2i-user-image').files;
 
         if (prompt == '' || prompt == null) {
             alert('Please enter a text to generate an image.');
@@ -24,9 +24,9 @@ function sendRequestForI2I() {
 
         // send request to server (Multipart/form-data {text, image})
         api.requestImageToImage(prompt, selectedFile).then((data) => {
-            var {uuid, expectedTime} = data;
-            console.log(`timeout activates after ${expectedTime} seconds`);
-            var i2iForm = new I2iForm(uuid, prompt, expectedTime);
+            var {uuid, expected_time} = data;
+            console.log(`timeout activates after ${expected_time} seconds`);
+            var i2iForm = new I2iForm(uuid, prompt, expected_time);
             i2i_queue.push(i2iForm);
             i2iForm.addTimeout();
             
