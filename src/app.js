@@ -52,6 +52,7 @@ app.get("/", function (req, res) {
     res.render("index.html");
 });
 
+app.use('/i2i', require('./api/i2i'));
 app.use('/tti', require('./api/tti'));
 
 //-----------------------------------------------------------------------
