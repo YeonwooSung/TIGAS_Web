@@ -1,4 +1,4 @@
-const axios = require('axios').default;
+const axios = require('axios');
 const express = require('express');
 const fs = require('fs');
 var FormData = require('form-data');
