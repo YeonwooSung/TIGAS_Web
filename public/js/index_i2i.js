@@ -51,6 +51,17 @@ function init() {
     try {
         var button = document.getElementById('i2i-ok');
         button.addEventListener('click', sendRequestForI2I);
+
+        var file_input = document.getElementById('i2i-user-image');
+        file_input.addEventListener('change', (event) => {
+            var file = event.target.files[0];
+            var reader = new FileReader();
+            reader.onload = function(event) {
+                var img_tag = document.getElementById('i2i-image');
+                img_tag.src = event.target.result;
+            };
+            reader.readAsDataURL(file);
+        });
     } catch(err) {
         alert('error')
         console.log(err);
